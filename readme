@@ -1,0 +1,59 @@
+# RAG QA System
+
+A **Retrieval-Augmented Generation (RAG) Question Answering System** built with [Streamlit](https://streamlit.io/), [LangChain](https://python.langchain.com/), [ChromaDB](https://www.trychroma.com/), and HuggingFace Transformers.
+
+---
+
+## 🚀 Features
+
+- **Document Upload:** Upload PDF, TXT, or DOCX files for ingestion and indexing.
+- **RAG Pipeline:** Combines retrieval from your documents with a powerful language model for accurate answers.
+- **Source Transparency:** Shows which document snippets were used to answer your question.
+- **Chat History:** Maintains a session-based conversation history.
+- **Query History:** Sidebar shows your last 10 queries.
+- **Feedback:** Like answers and leave feedback for each response.
+- **Easy to Use:** Clean, interactive web interface.
+
+---
+
+## 🛠️ How It Works
+
+1. **Ingest Documents:**  
+   Upload your documents. The system splits them into chunks, creates embeddings, and stores them in ChromaDB.
+
+2. **Ask Questions:**  
+   Enter your question in the main interface. The system retrieves relevant chunks and generates an answer using a HuggingFace LLM.
+
+3. **View Answers & Sources:**  
+   See the answer, supporting document snippets, and provide feedback.
+
+---
+
+## 📦 Project Structure
+
+```
+ragQA/
+│
+├── app.py                # Streamlit frontend
+├── src/
+│   ├── ingest.py         # Document ingestion and embedding
+│   └── query.py          # RAG pipeline and answer generation
+├── data/                 # Uploaded documents
+├── vectorstore/          # ChromaDB persistent storage
+└── requirements.txt      # Python dependencies
+```
+
+---
+
+
+## 📝 Notes
+
+- The default LLM is Falcon-7B-Instruct. You may need a GPU and sufficient RAM.
+- Uploaded files are stored in the `data/` folder.
+- Vector store is persisted in `vectorstore/chroma`.
+- For best results, use clear and specific questions.
+---
+
+## 🙋‍♂️ Author
+Created by ❤️ **Saurabh Chaudhary**
+---
